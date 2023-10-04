@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <ul class = "vechile">
+        <li>Scorpio</li>
+        <li>Thar</li>
+        <li>Gurkha</li>
+        <li>Tata Punch</li>
+    </ul>
+</body>
+        <script>
+            function addVechile(VechileName){
+                const li = document.createElement('li');
+                li.innerHTML = `${VechileName}`
+                document.querySelector('.vechile').appendChild(li)
+            }
+            addVechile("Compact.SUV");
+            addVechile("fortuner");
+                        
+
+
+            //optimized Approch
+
+            function addOptiVechile(VechileName){
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(VechileName));
+                document.querySelector('.vechile').appendChild(li)
+            }
+            addOptiVechile("Jimmny");
+
+            function addOptiVechile(VechileName){
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(VechileName));
+                document.querySelector('.vechile').appendChild(li)
+            }
+            addOptiVechile("fararri");
+            addOptiVechile("RangeRover");
+
+            //Edit karne k liye quary selector
+
+            const secondVechile=document.querySelector("li:nth-child(2)")
+            secondVechile.innerHTML="Nano"
+
+// second vechile name was replace by newLine function.
+
+            const newLine=document.createElement("li")
+            newLine.innerHTML="Honda";
+            secondVechile.replaceWith(newLine)
+            
+            //delete or remove
+            const lastVechile=document.querySelector("li:last-child")
+            
+            lastVechile.remove()
+
+            const lastVechile1 =document.querySelector("li:nth-child(5)")
+            
+            lastVechile1.remove()
+        </script>
+</html>
